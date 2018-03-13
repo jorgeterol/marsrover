@@ -16,7 +16,7 @@ function turnLeft(rover) {
     case "S":
       rover.direction = "E";
       break;
-    case "E":
+    case "E": 
       rover.direction = "N";
       break;
     case "W":
@@ -48,7 +48,7 @@ function moveForward(rover) {
       if (rover.y > 0) {
         rover.y -= 1;
         console.log("x:" + rover.x, "y:" + rover.y);
-        rover.travelLog.push("x:" + rover.x, "y:" + rover.y);
+        rover.travelLog.push([rover.x,rover.y]);
       } else {
         console.log("Mars Rover can't move in this direction.")
       }
@@ -57,7 +57,7 @@ function moveForward(rover) {
       if (rover.y < 9) {
         rover.y += 1;
         console.log("x:" + rover.x, "y:" + rover.y);
-        rover.travelLog.push("x:" + rover.x, "y:" + rover.y);
+        rover.travelLog.push([rover.x,rover.y]);
       } else {
         console.log("Mars Rover can't move in this direction.")
       }
@@ -66,7 +66,7 @@ function moveForward(rover) {
       if (rover.x < 9) {
         rover.x += 1;
         console.log("x:" + rover.x, "y:" + rover.y);
-        rover.travelLog.push("x:" + rover.x, "y:" + rover.y);
+        rover.travelLog.push([rover.x,rover.y]);
       } else {
         console.log("Mars Rover can't move in this direction.")
       }
@@ -75,7 +75,7 @@ function moveForward(rover) {
       if (rover.x > 0) {
         rover.x -= 1;
         console.log("x:" + rover.x, "y:" + rover.y);
-        rover.travelLog.push("x:" + rover.x, "y:" + rover.y);
+        rover.travelLog.push([rover.x,rover.y]);
       } else {
         console.log("Mars Rover can't move in this direction.")
       }
@@ -89,7 +89,7 @@ function moveBackwards(rover) {
       if (rover.y < 9) {
         rover.y += 1;
         console.log("x:" + rover.x, "y:" + rover.y);
-        rover.travelLog.push("x:" + rover.x, "y:" + rover.y);
+        rover.travelLog.push([rover.x,rover.y]);
       } else {
         console.log("Mars Rover can't move in this direction.")
       }
@@ -98,7 +98,7 @@ function moveBackwards(rover) {
       if (rover.y > 0) {
         rover.y -= 1;
         console.log("x:" + rover.x, "y:" + rover.y);
-        rover.travelLog.push("x:" + rover.x, "y:" + rover.y);
+        rover.travelLog.push([rover.x,rover.y]);
       } else {
         console.log("Mars Rover can't move in this direction.")
       }
@@ -107,7 +107,7 @@ function moveBackwards(rover) {
       if (rover.x > 0) {
         rover.x -= 1;
         console.log("x:" + rover.x, "y:" + rover.y);
-        rover.travelLog.push("x:" + rover.x, "y:" + rover.y);
+        rover.travelLog.push([rover.x,rover.y]);
       } else {
         console.log("Mars Rover can't move in this direction.")
       }
@@ -116,13 +116,15 @@ function moveBackwards(rover) {
       if (rover.x < 9) {
         rover.x += 1;
         console.log("x:" + rover.x, "y:" + rover.y);
-        rover.travelLog.push("x:" + rover.x, "y:" + rover.y);
+        rover.travelLog.push([rover.x,rover.y]);
       } else {
         console.log("Mars Rover can't move in this direction.")
       }
       break;
   }
 }
+
+var firstCommands = "rffrfflfrff";
 
 function commandList(commands){
 for (i = 0; i < commands.length - 1; i++) {
@@ -146,3 +148,5 @@ for (i = 0; i < commands.length - 1; i++) {
 }
 console.log(rover.travelLog);
 }
+
+commandList(firstCommands);
